@@ -1,0 +1,14 @@
+{
+  "name": "MMBI",
+  "version": "1.0.0",
+  "description": "- Loan Providing Company",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass assets/scss/styles.scss assets/css/styles.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^9.0.0"
+  }
+}

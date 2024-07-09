@@ -1,0 +1,67 @@
+.projects{
+    background-color: var(--container-color);
+    &__sub{
+        text-align: center;
+        width: 60%;
+        margin: 1rem auto;
+    }
+    &__content{
+        row-gap: 1rem;
+        margin-top: 2rem;
+    }
+    &__button{
+        display: inline-block;
+        padding: .5rem .5rem;
+        border-radius: .4rem;
+        font-weight: var(--font-medium);
+        transition: .3s;
+        margin: .3rem 0;
+    &__button:hover{
+        background-color: unset;
+        color: unset;
+    }
+        &__bg-purple{
+            background-color: #a688bd28;
+            color: #A688BD;
+        }
+        &__bg-brown{
+            background-color: #e3ad994b;
+            color: #E3AD99;
+        }
+        &__bg-blue{
+            background-color: #3e3d6d48;
+            color: #3E3D6D;
+        }
+        &__bg-orange{
+            background-color: #f6816941;
+            color: #F68169;
+        }
+        &__bg-lightgreen{
+            background-color: #57adca3b;
+            color: #57ADCA;
+        }
+    }
+    &__views{
+        display: flex;
+        justify-content: center;
+    }
+}
+.projects > h5:first-of-type{
+    font-weight: bold;
+}
+.text-bold{
+    font-weight: var(--font-semi-bold);
+}
+.buttons_group i{
+    margin: 0 .5rem;
+}
+.projects_know{
+    float: right;
+    margin-top: 1rem;
+}
+.projects_know i{
+    margin-left: .3rem;
+}
+.rotate320{
+    transform: rotate(321deg);
+}

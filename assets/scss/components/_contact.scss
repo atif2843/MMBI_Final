@@ -1,0 +1,93 @@
+/*=============== DISCOUNT ===============*/
+.contact{
+    background: var(--container-color);
+    &__container{
+        border-radius: 1rem;
+        padding: 2.5rem 0 1.5rem;
+        column-gap: 7rem;
+        width: 80%;
+        margin: 0 auto;
+    }
+    &__data{
+        text-align: center;
+        width: 60%;
+        margin: 0 auto;
+    }
+    &__cred{
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    &__separator{
+        border-right: 1px solid lightgrey;
+    }
+    &__wrapper{
+        justify-content: center;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: center;
+    }
+    &__icon{
+        width: 50px;
+        height: 50px;
+        background-color: var(--second-color);
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-color-light);
+        font-size: 1.3rem;
+        border: 2px solid var(--second-color-trans);
+    }
+    &__credata{
+        margin-left: 1rem;
+        p{
+            margin: 0;
+        }
+    }
+    &__mid{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        margin-top: 2rem;
+        &__img{
+            position: absolute;
+            top: 34px;
+        }
+        &__text{
+            z-index: 2;
+            background: white;
+            padding: 0 0.3rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #ef7d1b;
+            border-radius: 50%;
+        }
+    }
+        
+    &__title{
+        font-size: var(--h2-font-size);
+        margin-bottom: var(--mb-2);
+    }
+    &__img{
+        width: 200px;
+        justify-self: center;
+    }
+    &__form{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__input{
+        margin-bottom: 1.75rem;
+        padding: 0.75rem;
+        width: 100%;
+        background: transparent;
+        border: 1px orange solid;
+        border-radius: 10px;
+        outline: none;
+    }
+    &__input::placeholder{
+        color: white;
+    }
+}

@@ -1,0 +1,131 @@
+.fa-star{
+    color: var(--yellow-star);
+}
+/*=============== CATEGORY ===============*/
+.testimonials{
+    background-color: var(--container-color);
+    &__data{
+        box-shadow: 0px 0px 11px 1px #d2d2d2;
+        width: 242px;
+        border-radius: .2rem;
+        &:hover .category__img{
+            transform: translateY(-.5rem);
+        }
+        &--content{
+            margin: .5rem;
+        }
+    }
+
+    &__img{
+        width: 120px;
+        margin-bottom: var(--mb-0-75);
+        transition: .3s;
+    }
+    &__title{
+        padding-top: var(--mb-0-75);
+        margin: 0;
+    }
+    &__description{
+        margin: var(--mb-1) 0;
+    }
+    &__buttons{
+        display: flex;
+        justify-content: center;
+    }
+    &__abs{
+        position: absolute;
+        top: -8%;
+        left: 7%;
+    }
+}
+.testimonials-swiper > p:first-of-type{
+    width: 50%;
+    text-align: center;
+    margin: 2rem auto;
+}
+div.testimonials__data--content .button--white{
+    color: #2283F5;
+}
+.testimonials__description{
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.swiper-pagination-bullet {
+    background-color: var(--second-color); /* Change to your desired color */
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--second-color); /* Change to your desired color */
+    width: 2.5rem;
+}
+.swipper_button_wrpper{
+    position: relative;
+    height: .5rem;
+}
+.swiper-button-prev, .swiper-button-next {
+    top: 0;
+    position: absolute;
+}
+.swiper-button-next{
+    right: 47%;
+    transform: translateX(100%);
+}
+.swiper-button-prev{
+    left: 47%;
+    transform: translateX(-100%);
+}
+.swiper-button-prev i, .swiper-button-next i {
+    font-size: 12px; /* Adjust icon size */
+    color: #f1f1f1; /* Adjust icon color */
+    background-color: #333;
+    border-radius: 5px;
+    padding: .5rem .7rem;
+}
+.swiper-button-prev:after, .swiper-button-next:after{
+    display: none;
+}
+.swiper-wrapper{
+    margin: 0 1rem;
+}
+.testimonials__data--content--name{
+    margin: .5rem 0;
+}
+.testimonials__description2{
+    margin-top: .2rem;
+    margin-bottom: .2rem;
+    color: var(--second-color);
+    font-weight: var(--font-medium);
+}
+.new1{
+    &__container{
+        padding-top: 1rem;
+    }
+    &__img{
+        width: 120px;
+        margin-bottom: var(--mb-0-5);
+        transition: .3s;
+    }
+    &__content{
+        position: relative;
+        background: var(--container-color);
+        width: 242px;
+        padding: 2rem 1rem 1.5rem 1rem;
+        border-radius: 0.3rem;
+        box-shadow: 0px 0px 11px 1px #d2d2d2;
+
+        &:hover .new__img{
+            transform: translateY(-.5rem);
+        }
+
+        &:hover .new__button{
+            right: 0;
+        }
+    }
+}
+.swiper{
+    overflow: visible;
+}

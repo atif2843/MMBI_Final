@@ -1,0 +1,107 @@
+/*=============== ABOUT ===============*/
+.about{
+    &__container{
+        row-gap: 2rem;
+    }
+    &__data{
+        text-align: center;
+        margin: 0 .5rem;
+        padding: 0 .5rem;
+    }
+    &__description{
+        margin-bottom: var(--mb-2);
+    }
+    &__img{
+        width: 200px;
+        justify-self: center;
+    }
+    &__card_container{
+        display: flex;
+        width: var(--Container-W-10, 250px);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        padding: 0rem 0.5rem;
+    }
+    &__card{
+        box-shadow: 0px 4px 24px 0px rgba(134, 151, 167, 0.15);
+        border-radius: .6rem;
+        align-items: center;
+        padding: 32px 24px;
+        text-align: center;
+    }
+    &__card{
+        h3{
+            margin: 0 !important;
+        }
+    }
+
+}
+.about_icon{
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    //box-shadow: 0px 0px 10px 3px var(--second-color-trans);
+
+}
+.service_icon{
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    
+    //box-shadow: 0px 0px 10px 3px var(--second-color-trans);
+
+}
+.service_icon::before{
+    content: '';
+    position: absolute;
+    display: inline-flex;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    background-color: #b9b9b966;
+    top: -5px;
+    left: -5px;
+    z-index: -100;
+}
+.bg-orange{
+    background-color: var(--second-color);
+    box-shadow: 0px 0px 10px 3px var(--second-color-trans);
+}
+
+.epub{
+    background-color: #7E5973;
+    box-shadow: 0px 4px 24px 0px #7e5973bb;
+}
+.devlop{
+    background-color: #e3ad99;
+    box-shadow: 0px 4px 24px 0px #e3ad99ad;
+}
+.email{
+    background-color: #F68169;
+    box-shadow: 0px 4px 24px 0px #f68169b7;
+}
+.DM{
+    background-color: #3E3D6D;
+    box-shadow: 0px 4px 24px 0px #3e3d6dad;
+}
+.lms{
+    background-color: #76C6C7;
+    box-shadow: 0px 4px 24px 0px #76c6c7a4;
+}
+
+.about__data .bg-orange{
+    background-color: var(--second-color);
+    color: var(--text-color-light) !important;
+}
+.bg-orange h3{
+    color: var(--text-color-light) !important;
+}

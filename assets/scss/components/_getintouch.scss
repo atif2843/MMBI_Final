@@ -1,0 +1,17 @@
+.GetInTouch{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #36b776;
+    background-image: url(../img/Thumbs/GIT.jpeg);
+    background-size: cover;
+    background-blend-mode: soft-light;
+}
+.GetInTouch .flex{
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+.GetInTouch .flex h3{
+    color: var(--title-color);
+    margin: 0;
+}

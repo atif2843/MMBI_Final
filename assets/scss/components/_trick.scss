@@ -1,0 +1,93 @@
+/*=============== TRICK OR TREAT ===============*/
+#trick{
+    background-color: var(--container-color);
+}
+.FAQ{
+    width: 80%;
+    margin: 0 auto;
+    &__accordian{
+        margin-top: 4rem;
+    }
+    &__title{
+        margin: 0;
+    }
+    &__description{
+        width: 60%;
+        text-align: center;
+        margin: 0;
+    }
+    &__contact{
+        text-align: center;
+        color: #2283F5;
+    }
+    &__container{
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding-top: 1rem;
+    }
+    &__content{
+        position: relative;
+        background: var(--container-color);
+        border-radius: 1rem;
+        padding: 1.5rem 0 1rem 0;
+        text-align: center;
+        overflow: hidden;
+
+        &:hover .trick__img{
+            transform: translateY(-.5rem);
+        }
+
+        &:hover .trick__button{
+            right: 0;
+        }
+    }
+    &__img{
+        width: 90px;
+        transition: .3s;
+    }
+    &__subtitle,
+    &__price{
+        display: block;
+    }
+    &__subtitle{
+        font-size: var(--smaller-font-size);
+        margin-bottom: var(--mb-0-5);
+    }
+    &__button{
+        display: inline-flex;
+        padding: .5rem;
+        border-radius: .25rem .25rem .75rem .25rem;
+        position: absolute;
+        right: -3rem;
+        bottom: 0;
+    }
+    &__icon{
+        font-size: 1.25rem;
+        color: var(--title-color);
+    }
+}
+.uk-open{
+    margin-top: 4rem;
+    box-shadow: 0px 4px 24px 0px rgba(134, 151, 167, 0.15);
+    border-radius: .3rem;
+    padding: 1rem 2rem;
+}
+.FAQ__accordian li:not(.uk-open){
+    margin: 3rem 2rem;
+}
+.uk-accordion-title .uk-icon-plus,
+.uk-accordion-title .uk-icon-minus {
+    color: #32D583; /* Green color */
+}
+.uk-open>.uk-accordion-title::before{
+    background-image: url(data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2213%22%20height%3D%2213%22%20viewBox%3D%220%200%2013%2013%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20fill%3D%22%23f2a854%22%20width%3D%2213%22%20height%3D%221%22%20x%3D%220%22%20y%3D%226%22%2F%3E%3C%2Fsvg%3E);
+}
+.uk-accordion-title::before{
+    background-image: url(data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2213%22%20height%3D%2213%22%20viewBox%3D%220%200%2013%2013%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20fill%3D%22%23f2a854%22%20width%3D%221%22%20height%3D%2213%22%20x%3D%226%22%20y%3D%220%22%2F%3E%3Crect%20fill%3D%22%23f2a854%22%20width%3D%2213%22%20height%3D%221%22%20x%3D%220%22%20y%3D%226%22%2F%3E%3C%2Fsvg%3E);
+}
+.uk-accordion-content{
+    margin: 2rem 0;
+    border-left: 2px solid var(--second-color);
+    padding-left: 1rem;
+}
