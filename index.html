@@ -353,7 +353,7 @@
                         <h3>
                             Have an idea? Let’s get your project started today!
                         </h3>
-                        <a href="#" class="button button--orange">Get in Touch</a>
+                        <div><a href="#" class="button button--orange">Get in Touch</a></div>
                     </div>
                 </div>
             </section>
@@ -365,7 +365,7 @@
                     <div class="FAQ__container flex">
                         <h2 class="FAQ__title">Do you have any questions?</h2>
                         <p class="FAQ__description">Most common questions about software/app development and the answers to them. If you can’t find what you’re looking for then feel free to ask us directly via</p>
-                        <a href="" class="FAQ__contact">Contact Us</a>
+                        <a href="#" class="button button--orange">Contact Us</a>
                     </div>
                     <ul uk-accordion="collapsible: true; active:true" class="FAQ__accordian">
                         <li class="uk-open">
@@ -402,7 +402,7 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipiscing eli mattis sit phasellus mollis sit aliquam sit nullam.</p>
                 </div>
                 <div class="contact__cred">
-                    <div class="contact__wrapper flex contact__separator">
+                    <div class="contact__wrapper grid contact__separator">
                         <div class="contact__icon">
                             <span><i class="fa-regular fa-envelope"></i></span>
                         </div>
@@ -411,7 +411,7 @@
                             <p>info@corpnix.com</p>
                         </div>
                     </div>
-                    <div class="contact__wrapper flex contact__separator">
+                    <div class="contact__wrapper grid contact__separator">
                         <div class="contact__icon">
                             <span><i class="fa-solid fa-phone-volume"></i></span>
                         </div>
@@ -421,7 +421,7 @@
                             <p>+91 900-443-2433</p>
                         </div>
                     </div>
-                    <div class="contact__wrapper flex">
+                    <div class="contact__wrapper grid">
                         <div class="contact__icon">
                             <span><i class="fa-solid fa-location-dot"></i></span>
                         </div>
@@ -439,19 +439,41 @@
                     <p class="contact__mid__text">or</p>
                 </div>
                 <div class="contact__container container grid">
-                    <form action="" class="contact__form">
-                        <input type="text" placeholder="Enter your name" class="contact__input">
-                        <input type="number" placeholder="Enter your number" class="contact__input">
-                        <input type="email" placeholder="Enter your email" class="contact__input">
-                        <textarea type="textarea" placeholder="Enter your Message" class="contact__input">
-                        </textarea>
-                        <input type="submit" value="Submit" class=" button">
-                    </form>
+                    
                     <div class="map-sec" id="map">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.997352987787!2d72.89071331531342!3d19.107772055937534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8749e02a443%3A0xff0a857997a76bb2!2sNaaz%20Paper%20Box!5e0!3m2!1sen!2sin!4v1592238077931!5m2!1sen!2sin"
-                            frameborder="0" style="border:0;" allowfullscreen="true" aria-hidden="false" tabindex="0" width="400" height="500"></iframe>
+                        <h2>Find us</h2>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.730357538453!2d72.88675377395232!3d19.11948155060848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c92b97646fad%3A0x9e024ac68b111ba5!2sCorpnix!5e0!3m2!1sen!2sin!4v1720524955556!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        
+                        <div class="makeacall"><a href="#" class="button button--orange">Make a Call <span><i class="fa-solid fa-phone-volume"></i></span></a></div>
                     </div>
+                    <form action="">
+                        <div class="contact__first_two grid">
+                            <div class="contact__content-wrapper">
+                                <label for="name">Name</label>
+                                <input type="text" class="contact__input" placeholder="Enter Your Name">
+                            </div>
+                            <div class="contact__inputemail contact__content-wrapper">
+                                <label for="email">Email</label>
+                                <input type="text" name="email" class="contact__input" placeholder="Enter Your Email">
+                            </div>
+                        </div>
+                        <div>    
+                            <div class="contact__inputphone contact__content-wrapper">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" name="phone" class="contact__input" placeholder="Enter Your Whatsapp Number">
+                            </div>
+                        </div>
+                            <div>
+                                <div class="contact__inputmessage contact__content-wrapper">
+                                    <label for="message">Message</label>
+                                    <textarea name="message" id="" rows="8" placeholder="Enter your Message to Send"></textarea>
+                                </div>
+                            </div>
+                            <div class="contact__inputsubmit">
+                                <button type="submit" class="button button--orange contact__button_custom">Send <i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        
+                    </form>
 
                     
                 </div>
