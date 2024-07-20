@@ -42,7 +42,7 @@
     }
 }
 
-@media screen and (min-width: 767px){
+@media screen and (min-width: 768px){
     body{
         margin: 0;
     }
@@ -73,10 +73,9 @@
     .home{
         &__content{
             padding: 8rem 0 2rem;
-            grid-template-columns: 40% 60%;
-            gap: 4rem;
-            width: 80%;
-            margin: 0 auto;
+            grid-template-columns: 50% 50%;
+            width: 100%;
+            margin: 0 2rem;
         }
         &__img{
             height: 300px;
@@ -109,6 +108,10 @@
         &__card_container:first-of-type{
             margin-top: var(--mb-2);
         }
+    }
+    .custom_container{
+        margin-left: auto;
+        margin-right: auto;
     }
     .projects{
         &__content{
@@ -144,7 +147,7 @@
     }
     .contact{
         &__container{
-            grid-template-columns: repeat(2, max-content);
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             justify-content: center;
             column-gap: 3rem;
             padding: 3rem 0;
@@ -163,7 +166,6 @@
     .footer{
         &__container{
             grid-template-columns: repeat(3, 1fr);
-            justify-items: end;
             column-gap: 1rem;
         }
         &__img-two{
@@ -173,7 +175,190 @@
         }
     }
 }
- 
+@media (min-width: 579px) and (max-width: 767px) {
+    .home{
+        &__title, &__description{
+            text-align: center;
+        }
+        &__data{
+            width: 85%;
+            margin: 0 auto;
+        }
+    }
+    .custom_container{
+        max-width: 100%;
+    }
+    .about{
+        &__container{
+            row-gap: 0;
+        }
+        &__data{
+            padding: 1rem .5rem;
+        }
+        &__card_container:first-of-type{
+            margin-top: 2rem;
+        }
+
+    }
+    .swiper-pagination{
+        margin: 2.5rem 0;
+    }
+    .FAQ{
+        width: 100%;
+    }
+    .contact{
+        &__cred{
+            width: 60%;
+            margin: 0 auto;
+            row-gap: 1rem;
+        }
+        &__separator{
+            border-right: none;
+        }
+        &__first_two{
+            justify-content: unset;
+        }
+        
+    }
+    .footer{
+        &__container{
+            grid-template-columns: repeat(3, 1fr);
+            justify-content: space-between;
+            column-gap: 2rem;
+        }
+        &__content:first-of-type{
+            grid-column: 1/-1;
+        }
+    }
+    
+}
+@media screen and (max-width: 578px) {
+    .home{
+        &__data{
+            margin: 1rem 2rem;
+        }
+        &__content{
+            grid-template-columns: auto;
+        }
+        &__title, &__description{
+            text-align: center;
+            padding-top: 1rem;
+        }
+        &__img{
+            height: fit-content;
+        }
+    }
+    .grid{
+        width: 100%;
+        grid-template-columns: auto;
+    }
+
+    .section{
+        padding: 0rem 0 2rem;
+        
+        &__title{
+            padding-top: 2rem;
+        }
+    }
+    .about{
+        &__data{
+            display: block;
+            margin-top: 2rem;
+        }
+        &__card_container{
+            width: 100%;
+            align-items: center;
+        }
+    }
+    .about_icon{
+        margin: 1rem 0;
+    }
+    .custom_container{
+        max-width: 100%;
+    }
+    .category-swiper > p:first-of-type{
+        width: 90%;
+    }
+    .swiper-pagination{
+        margin: 2rem auto;
+    }
+    .projects{
+        &__content:not(:first-of-type){
+            margin-top: 3rem;
+        }
+        &__views{
+            padding: 1.5rem 0;
+        }
+    }
+    .GetInTouch .flex h3{
+        text-align: center;
+        color: var(--text-color-ligh);
+    }
+    .testimonials{
+        margin-top: 2rem;
+    }
+    .testimonials-swiper > p:first-of-type{
+        width: 90%;
+    }
+    .FAQ{
+        width: 100%;
+        margin: 2rem auto;
+        &__title{
+            text-align: center;
+        }
+        &__description{
+            text-align: center;
+            width: 100%;
+        }
+    }
+    .contact{
+        &__container{
+            max-width: 100%;
+            padding: 0.5rem 0 1.5rem;
+        }
+        &__data{
+            width: 90%;
+        }
+        &__cred{
+            text-wrap: balance;
+            gap: 1rem;
+            grid-template-columns: auto;
+        }
+        &__first_two{
+            grid-template-columns: 100%
+        }
+        &__inputemail{
+            margin-top: 2rem;
+        }
+    }
+    .contact__container form{
+        width: 90%;
+        margin: 1.5rem auto;
+    }
+    .map-sec h2{
+        margin: 1.5rem;
+    }
+    .footer{
+        background-color: var(--container-color);
+        &__container{
+            grid-template-columns: repeat(3, 1fr);
+            justify-content: space-between;
+            column-gap: 2rem;
+        }
+        &__content:first-of-type{
+            grid-column: 1/-1;
+        }
+        &__social{
+            column-gap: 2rem;
+        }
+        &__copywrapper{
+            flex-wrap: wrap;
+        }
+        &__copy{
+            margin: 1rem 0;
+        }
+    }
+}
 /* For large devices */
 @media screen and (min-width: 992px){
     .container{
@@ -195,6 +380,10 @@
         &__content{
             padding-top: 9rem;
             gap: 3rem;
+            grid-template-columns: 50% 50%;
+            gap: 4rem;
+            width: 80%;
+            margin: 0 auto;
         }
         &__group{
             padding-top: 0;
@@ -263,6 +452,34 @@
             font-size: var(--h3-font-size);
         }
     }
+    .contact{
+        &__container{
+            max-width: 80%;
+            padding: 2.5rem 0 1.5rem;
+        }
+        &__data{
+            width: 60%;
+        }
+        &__cred{
+            justify-content: space-between;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        &__first_two{
+            grid-template-columns: 48% 48%;
+            justify-content: space-between;
+            
+        }
+        &__separator{
+            border-right: 1px solid lightgrey;
+        }
+        .testimonials-swiper > p:first-of-type{
+            width: 50%;
+        }
+        
+        
+
+    }
+    
 
     .discount__container{
         column-gap: 7rem;
@@ -300,6 +517,12 @@
 
     .swiper-pagination{
         margin-top: var(--mb-2-5);
+    }
+    .contact{
+        &__first_two{
+            justify-content: space-between;
+        }
+    
     }
 
     .footer{

@@ -3,24 +3,19 @@
     background: var(--container-color);
     &__container{
         border-radius: 1rem;
-        padding: 2.5rem 0 1.5rem;
+        
         column-gap: 7rem;
-        width: 80%;
         margin: 0 auto;
     }
     &__data{
         text-align: center;
-        width: 60%;
+        
         margin: 0 auto;
     }
     &__cred{
         display: grid;
-        justify-content: space-between;
-        grid-template-columns: repeat(3, 1fr);
     }
-    &__separator{
-        border-right: 1px solid lightgrey;
-    }
+    
     &__wrapper{
         justify-content: center;
         flex-wrap: wrap;
@@ -76,9 +71,7 @@
         justify-self: center;
     }
     &__first_two{
-        grid-template-columns: 48% 48%;
         margin: 1rem 0;
-        justify-content: space-between;
     }
     &__content-wrapper{
         display: inline-flex;
