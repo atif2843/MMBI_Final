@@ -9,7 +9,7 @@
             transform: translateY(-.5rem);
         }
         &--content{
-            margin: .5rem;
+            margin: 1rem;
         }
     }
 
@@ -29,20 +29,31 @@
         display: flex;
         justify-content: center;
     }
+
     &__abs{
         position: absolute;
         top: -8%;
         left: 7%;
     }
+
+    &__icon{
+        max-width: 30px;
+    }
 }
+
+.category__buttons a i{
+    margin-left:.5rem;
+}
+
 .category-swiper > p:first-of-type{
     width: 50%;
     text-align: center;
     margin: 2rem auto;
 }
 div.category__data--content .button--white{
-    color: #2283F5;
+   // color: #2283F5;
 }
+
 .category__description{
     display: -webkit-box;
     -webkit-line-clamp: 5; /* Number of lines to show */

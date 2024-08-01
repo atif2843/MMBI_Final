@@ -33,7 +33,7 @@
     background: #ddd8d8;
 
     &-thumb{
-        background: #d4cece;
+        background: var(--second-color);
         border-radius: .5rem;
     }
 }

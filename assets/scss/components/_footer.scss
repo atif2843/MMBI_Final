@@ -30,6 +30,7 @@
 
     &__container{
         row-gap: 2rem;
+
     }
     &__logo{
         display: flex;
@@ -55,7 +56,7 @@
 
         &-link{
             display: inline-flex;
-            background: var(--container-color);
+            //background: var(--container-color);
             padding: .25rem;
             border-radius: .25rem;
             color: var(--text-color);
@@ -92,7 +93,6 @@
         }
     }
     &__copywrapper{
-        margin-top: 4.5rem;
         display: flex;
         flex-wrap: nowrap;
         justify-content: center;
