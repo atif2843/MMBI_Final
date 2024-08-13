@@ -1,6 +1,8 @@
 /*===============  BREAKPOINTS ===============*/
 /* For small devices */
 @media screen and (max-width: 320px){
+    
+    
     .container{
         margin-left: var(--mb-1);
         margin-right: var(--mb-1);
@@ -26,6 +28,8 @@
 
 /* For medium devices */
 @media screen and (min-width: 576px){
+    
+    
     .about__container{
         grid-template-columns: .8fr;
         justify-content: center;
@@ -56,6 +60,7 @@
 
 }
 @media screen and (min-width: 768px){
+    
 
     body{
         margin: 0;
@@ -76,7 +81,7 @@
 
         &__list{
             flex-direction: row;
-            column-gap: 3rem;
+            column-gap: 1.5rem;
         }
         &__link{
             text-transform: initial;
@@ -145,16 +150,21 @@
             justify-content: center;
         }
     }
-
+    .custom_container{
+        max-width: 100%;
+    }
     .about{
+        
         &__container{
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: .8fr;
             align-items: center;
+            padding: 2rem 0;
         }
         &__title,
         &__data{
             text-align: initial;
         }
+        
         &__img{
             width: 250px;
         }
@@ -232,7 +242,11 @@
         }
     }
 }
+
+
+
 @media (min-width: 579px) and (max-width: 767px) {
+    
     
     .home{
         &__title, &__description{
@@ -418,10 +432,13 @@
     }
 }
 /* For large devices */
-@media screen and (min-width: 992px){
 
 
 
+
+
+@media screen and (min-width: 992px){ 
+    
     .container{
         margin-left: auto;
         margin-right: auto;
@@ -494,8 +511,9 @@
 
     .about{
         &__container{
-            column-gap: 0rem;
-            padding: 1rem 0;
+            grid-template-columns: repeat(2, 1fr);
+            padding: 2rem 0;
+            max-width: 90%;
         }
         &__img{
             width: 350px;
@@ -574,7 +592,6 @@
         margin-top: 6rem;
     }
 }
-
 @media screen and (min-width: 1200px){
     .home{
         &__img{
@@ -602,4 +619,79 @@
             left: -3%;
         }
     }
+}
+/* Extra Small Devices (Phones) */
+@media only screen and (max-width: 575.98px){
+    /* Styles for portrait orientation on extra small devices */
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767.98px){
+    /* Styles for landscape orientation on extra small devices */
+}
+
+/* Small Devices (Tablets) */
+@media only screen and (min-width: 768px) and (max-width: 991.98px){
+    /* Styles for portrait orientation on small devices */
+    .nav{
+        flex-direction: column;
+        margin: 0 auto;
+        &__logo-img{
+            width: 3.5rem;
+            margin-top: .5rem;
+        }
+    }
+
+
+}
+@media only screen and (max-width: 768px){
+    .loan{
+        &__form, &__chart{
+            width: 100%;
+        }
+        &__chart{
+            margin-top: 1rem;
+        }
+    }
+    .nav{
+        &__logo-img{
+            width: 3.5rem;
+            margin-top: .5rem;
+        }
+    }
+}
+@media only screen and (min-width: 768px){
+    .loan{
+        &__form, &__chart{
+            width: 45%;
+        }
+    }
+    .nav{
+        &__logo-img{
+            width: 3.5rem;
+            
+        }
+    }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199.98px){
+    /* Styles for landscape orientation on small devices */
+    
+
+}
+
+/* Medium Devices (Desktops) */
+@media only screen and (min-width: 1200px) and (max-width: 1399.98px){
+    /* Styles for portrait orientation on medium devices */
+    
+}
+
+@media only screen and (min-width: 1400px) and (max-width: 1599.98px){
+    /* Styles for landscape orientation on medium devices */
+}
+
+/* Large Devices (Large Desktops) */
+@media only screen and (min-width: 1600px){
+    /* Styles for portrait orientation on large devices */
+}
+
+@media only screen and (min-width: 1600px){
 }

@@ -188,7 +188,8 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 1.5rem; }
+    row-gap: 1.5rem;
+    margin: 0 !important; }
   .nav__link {
     text-transform: uppercase;
     font-weight: var(--font-black);
@@ -221,6 +222,13 @@ button {
     height: 5px;
     background-color: var(--second-color);
     border-radius: 50%; }
+
+.uk-open {
+  margin: 0 !important; }
+
+.brand-slider {
+  background-color: var(--container-color);
+  padding: 2rem 0; }
 
 /*=============== HOME ===============*/
 .home {
@@ -264,7 +272,6 @@ button {
     text-transform: uppercase;
     margin-bottom: var(--mb-1); }
   .home__title {
-    font-size: var(--biggest-font-size);
     font-weight: 700;
     line-height: 109%;
     margin-bottom: var(--mb-1); }
@@ -799,7 +806,7 @@ section.category div.swiper {
 /*=============== SCROLL UP ===============*/
 .scrollup {
   position: fixed;
-  background: var(--container-color);
+  background: var(--second-color);
   right: 1rem;
   bottom: -20%;
   display: inline-flex;
@@ -809,11 +816,28 @@ section.category div.swiper {
   opacity: .8;
   transition: .4s; }
   .scrollup:hover {
-    background-color: var(--first-color);
+    background-color: var(--second-color-alt);
     opacity: 1; }
   .scrollup__icon {
     font-size: 1.25rem;
-    color: var(--title-color); }
+    color: var(--text-color-light); }
+
+.scrollup-whatsapp {
+  position: fixed;
+  background: var(--Tertiary-color);
+  left: 1rem;
+  bottom: 3rem;
+  display: inline-flex;
+  padding: .5rem;
+  border-radius: .50rem;
+  z-index: var(--z-tooltip);
+  transition: .4s; }
+  .scrollup-whatsapp:hover {
+    background-color: var(--Tertiary-color-alt);
+    opacity: 1; }
+  .scrollup-whatsapp__icon {
+    font-size: 2rem;
+    color: var(--text-color-light); }
 
 /* Show Scroll Up*/
 .show-scroll {
@@ -877,7 +901,7 @@ section.category div.swiper {
       display: none; }
     .nav__list {
       flex-direction: row;
-      column-gap: 3rem; }
+      column-gap: 1.5rem; }
     .nav__link {
       text-transform: initial;
       font-weight: initial; }
@@ -922,9 +946,12 @@ section.category div.swiper {
   .category__container {
     grid-template-columns: repeat(3, 200px);
     justify-content: center; }
+  .custom_container {
+    max-width: 100%; }
   .about__container {
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center; }
+    grid-template-columns: .8fr;
+    align-items: center;
+    padding: 2rem 0; }
   .about__title, .about__data {
     text-align: initial; }
   .about__img {
@@ -1140,8 +1167,9 @@ section.category div.swiper {
   .category__img {
     width: 200px; }
   .about__container {
-    column-gap: 0rem;
-    padding: 1rem 0; }
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem 0;
+    max-width: 90%; }
   .about__img {
     width: 350px; }
   .about__description {
@@ -1197,6 +1225,52 @@ section.category div.swiper {
     width: 180px;
     top: 30%;
     left: -3%; } }
+
+/* Extra Small Devices (Phones) */
+@media only screen and (max-width: 575.98px) {
+  /* Styles for portrait orientation on extra small devices */ }
+
+@media only screen and (min-width: 576px) and (max-width: 767.98px) {
+  /* Styles for landscape orientation on extra small devices */ }
+
+/* Small Devices (Tablets) */
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+  /* Styles for portrait orientation on small devices */
+  .nav {
+    flex-direction: column;
+    margin: 0 auto; }
+    .nav__logo-img {
+      width: 3.5rem;
+      margin-top: .5rem; } }
+
+@media only screen and (max-width: 768px) {
+  .loan__form, .loan__chart {
+    width: 100%; }
+  .loan__chart {
+    margin-top: 1rem; }
+  .nav__logo-img {
+    width: 3.5rem;
+    margin-top: .5rem; } }
+
+@media only screen and (min-width: 768px) {
+  .loan__form, .loan__chart {
+    width: 45%; }
+  .nav__logo-img {
+    width: 3.5rem; } }
+
+@media only screen and (min-width: 992px) and (max-width: 1199.98px) {
+  /* Styles for landscape orientation on small devices */ }
+
+/* Medium Devices (Desktops) */
+@media only screen and (min-width: 1200px) and (max-width: 1399.98px) {
+  /* Styles for portrait orientation on medium devices */ }
+
+@media only screen and (min-width: 1400px) and (max-width: 1599.98px) {
+  /* Styles for landscape orientation on medium devices */ }
+
+/* Large Devices (Large Desktops) */
+@media only screen and (min-width: 1600px) {
+  /* Styles for portrait orientation on large devices */ }
 
 /*=============== DISCOUNT ===============*/
 .contact {
@@ -1489,3 +1563,25 @@ div.testimonials__data--content .button--white {
 .GetInTouch .flex h3 {
   color: var(--title-color);
   margin: 1rem 0; }
+
+.loan__title, .loan__description {
+  text-align: center; }
+
+.loan__title {
+  margin-top: 2.5rem; }
+
+.loan__description {
+  margin: 0; }
+
+.loan__chart {
+  position: relative;
+  display: flex;
+  justify-content: center; }
+
+canvas {
+  max-width: 100%; }
+
+.loandata {
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 1rem 2rem; }

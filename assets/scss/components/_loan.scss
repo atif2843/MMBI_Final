@@ -1,0 +1,34 @@
+
+.loan{
+    &__title,
+    &__description{
+        text-align: center;
+    }
+    &__title{
+        margin-top: 2.5rem;
+    }
+    &__description{
+        margin: 0;
+    }
+    &__chart{
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+    &__form{
+        
+    }
+
+
+
+    
+}
+
+canvas {
+    max-width: 100%;
+}
+.loandata{
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 1rem 2rem;
+}

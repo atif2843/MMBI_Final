@@ -26,11 +26,37 @@
         <title>Responsive Halloween Website</title>
     </head>
     <body>
+        <style>
+            #preloader {
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 9999;
+                background: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        </style>
+        <div id="modal-center" class="uk-flex-top" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+        
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+        
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        
+            </div>
+        </div>
+        <div id="preloader">
+            <div uk-spinner></div>
+        </div>
         <!--==================== HEADER ====================-->
         <header class="header" id="header">
             <nav class="nav container">
                 <a href="#" class="nav__logo">
-                    <img src="assets/Img_1/service card/logo_red.svg" alt="asdasdasdasda" class="nav__logo-img">
+                    <img src="assets/img/new_images/logo.png" alt="asdasdasdasda" class="nav__logo-img">
                     MMBI
                 </a>
 
@@ -45,8 +71,8 @@
                         </li>
 
                         <li class="nav__item">
-                            <a href="#trick" class="nav__link" type="button">Personal Loan <i class="fa-solid fa-angle-down"></i></a>
-                                
+                            <a href="#trick" class="nav__link" type="button">Essential Information</a>
+<!--                                 
                                     <ul class="nav-dropdown">
                                         <li></li>
                                         <li></li>
@@ -54,7 +80,7 @@
                                         <li><a href="#">Document Required</a></li>
                                         <li><a href="#">Eligibilty Criteria</a></li>
                                     </ul>
-                                
+                                 -->
                         </li>
                         <li class="nav__item">
                             <a href="#new" class="nav__link" type="button">EMI Calculator <i class="fa-solid fa-angle-down"></i></a>
@@ -62,14 +88,16 @@
                                 <ul class="nav-dropdown">
                                     <li></li>
                                     <li></li>
-                                    <li><a href="#">Home Loan</a></li>
-                                    <li><a href="#">Business Loan</a></li>
-                                    <li><a href="#">Education Loan</a></li>
+                                    <li><a href="loan.html">Home Loan</a></li>
+                                    <li><a href="loan.html">Business Loan</a></li>
                                     
                                 </ul>
                             
                         </li>
-                        <a href="tel:+919821481799" class="button button--orange">Apply Now</a>
+                        <li class="nav__list">
+                            <a href="#" class="nav__link" type="button">Contact</a>
+                        </li>
+                        <a href="form__.html" class="button button--orange">Apply Now</a>
                     </ul>
 
                     <div class="nav__close" id="nav-close">
@@ -87,6 +115,7 @@
         </header>
 
         <main class="main">
+            
             <!--==================== HOME ====================-->
             <section class="home" id="home">
                 <div class="swiper home-swiper">
@@ -95,22 +124,81 @@
                         <section class="swiper-slide">
                             <div class="home__content grid">
                                 <div class="home__data">
-                                    <h1 class="home__title">Have and Idea? <br> We made Reality</h1>
-                                    <p class="home__description">Corpnix Your IT Solutions Partner. With innovation at our core, we transform ideas into impactful solutions. Let's craft your digital success story together.
+                                    <h1 class="home__title">Need a Loan? <br> We make it Happen</h1>
+                                    <p class="home__description">Money Market Business - Your Trusted Loan Provider. With our expertise, we turn your financial needs into reality. Let’s help you achieve your financial goals.
                                     </p>
                                     <ul>
-                                        <li class="home__lists"><span class="home__activebullet"><i class="fa-solid fa-check"></i></span> Have an idea contact us</li>
-                                        <li class="home__lists"><span class="home__hbullet">2</span>We develop fast, perfect Responsive websites</li>
-                                        <li class="home__lists"><span class="home__hbullet">3</span>We design intuitive web & mobile apps</li>
+                                        <li class="home__lists"><span class="home__activebullet"><i class="fa-solid fa-check"></i></span> Easy Application Process</li>
+                                        <li class="home__lists"><span class="home__hbullet">2</span>Competitive Interest Rates</li>
+                                        <li class="home__lists"><span class="home__hbullet">3</span>Flexible Repayment Options</li>
                                     </ul>
                                     <div class="home__buttons">
-                                        <a href="#" class="button button--orange">Apply Now</a>
-                                        <a href="#" class="button button--green">Track Status <i class="fa-solid fa-angles-down"></i></a>
+                                        <a href="form__.html" class="button button--orange">Apply Now</a>
+                                        <a href="#modal-sections" class="button button--green" uk-toggle>Track Status <i class="fa-solid fa-angles-down"></i></a>
+<div id="modal-sections" uk-modal>
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <form id="statusForm" class="uk-margin uk-padding">
+            <div class="uk-margin">
+				<label class="uk-form-label" for="panNumber">PAN Number</label>
+				<div class="uk-form-controls">
+					<input class="uk-input" id="panNumber" name="panNumber" type="text" placeholder="Enter your PAN number" pattern="[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}" title="PAN number should be in the format: ABCDE1234F" required>
+				</div>
+			</div>
+            <div class="uk-margin">Your application status is <span id="statusResult" class="uk-label uk-label-success"></span></div>
+            <button type="submit" id="checkStatusButton" class="button button--orange"><span class="button-text">Check Status</span></button>
+            <div id="loadingSpinner" uk-spinner="ratio: 0.6" style="display:none;"></div>
+</form>
+          
+        <script>
+            document.getElementById('statusForm').onsubmit = function(event) {
+              event.preventDefault();
+                const panNumber = document.getElementById('panNumber').value;
+                const checkStatusButton = document.getElementById('checkStatusButton');
+                const buttonText = checkStatusButton.querySelector('.button-text');
+                const loadingSpinner = document.getElementById('loadingSpinner');
+                
+                checkStatusButton.disabled = true;
+                buttonText.innerText = 'Checking...';
+                loadingSpinner.style.display = 'inline-block';
+
+                console.log(panNumber)
+              fetch('https://script.google.com/macros/s/AKfycbxYqN0xef4S80yu9azuE3V_PhfF7rje6gv23-iYCnD2EKl1JG1qioKJz578REE0NMqHRw/exec', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({
+                  action: 'fetchStatus',
+                  panNumber: panNumber
+                })
+              })
+              .then(response => response.json())
+              .then(data => {
+                if (data.result === 'success') {
+                  document.getElementById('statusResult').innerText = `${data.statusMessage}`;
+                } else {
+                  document.getElementById('statusResult').innerText = `Not Found`;
+                }
+                console.log(data)
+              })
+              
+              .catch(error => {
+                document.getElementById('statusResult').innerText = `Error: ${error.message}`;
+              })
+              .finally(() => {
+                    // Re-enable the button, hide spinner, and reset button text
+                    checkStatusButton.disabled = false;
+                    buttonText.innerText = 'Check Status';
+                    loadingSpinner.style.display = 'none';
+                });
+            };
+          </script>
+    </div>
+</div>
                                     </div>
                                 </div>
 
                                 <div class="home__group">
-                                    <img src="assets/img/hero.png" alt="" class="home__img">
+                                    <img src="assets/img/MM_images/hero.svg" alt="" class="home__img">
                                 </div>
                                 
                                 
@@ -120,13 +208,81 @@
                     <div class="swiper-pagination"></div>
                 </div>
             </section>
+            <section class="brand-slider">
+                <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="finite: false; animation: fade; autoplay: true; autoplay-interval: 1000">
+
+                    <div class="uk-slider-items uk-child-width-1-3 uk-child-width-1-4@s uk-child-width-1-6@m uk-grid">
+                        <div>
+                            <div class="uk-panel">
+                                <img src="https://e7.pngegg.com/pngimages/257/159/png-clipart-hdfc-logo-thumbnail-bank-logos-thumbnail.png" width="50" height="50" alt="">
+                                
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-panel">
+                                <img src="https://www.fintechfutures.com/files/2023/11/InCred-Finance.jpg" width="50" height="50" alt="">
+                                
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-panel">
+                                <img src="https://assets-global.website-files.com/65b65b84c3edfa5897cdfb0b/66223fca2ba9f44ca226f304_Primary%20logo.png" width="50" height="50" alt="">
+                                
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-panel">
+                                <img src="https://e7.pngegg.com/pngimages/257/159/png-clipart-hdfc-logo-thumbnail-bank-logos-thumbnail.png" width="50" height="50" alt="">
+                                
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-panel">
+                                <img src="https://e7.pngegg.com/pngimages/257/159/png-clipart-hdfc-logo-thumbnail-bank-logos-thumbnail.png" width="50" height="50" alt="">
+                                
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-panel">
+                                <img src="https://e7.pngegg.com/pngimages/257/159/png-clipart-hdfc-logo-thumbnail-bank-logos-thumbnail.png" width="50" height="50" alt="">
+                                
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-panel">
+                                <img src="https://e7.pngegg.com/pngimages/257/159/png-clipart-hdfc-logo-thumbnail-bank-logos-thumbnail.png" width="50" height="50" alt="">
+                                
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-panel">
+                                <img src="https://e7.pngegg.com/pngimages/257/159/png-clipart-hdfc-logo-thumbnail-bank-logos-thumbnail.png" width="50" height="50" alt="">
+                                
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-panel">
+                                <img src="https://e7.pngegg.com/pngimages/257/159/png-clipart-hdfc-logo-thumbnail-bank-logos-thumbnail.png" width="50" height="50" alt="">
+                                
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-panel">
+                                <img src="https://e7.pngegg.com/pngimages/988/978/png-clipart-icici-bank-logo-thumbnail-bank-logos-thumbnail.png" width="50" height="50" alt="">
+                                
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+            </section>
             <!--==================== ABOUT ====================-->
             <section class="section about" id="about">
                 <div class="about__container custom_container grid">
                     <div class="about__data">
                         <div><span class="about_icon bg-orange"><img src="./assets/img/award-icon.svg" alt=""></span></div>
                         <h3 class="about__title">Why us? Numbers that showcase our success</h3>
-                        <p class="about__description">Founded in 2018, Corpnix is your trusted tech partner. We're all about quality and user-centric services. Our talented team crafts visually stunning websites that offer seamless experiences. Plus, we're SEO pros, boosting your online visibility.
+                        <p class="about__description">Personal loans are collateral free loans which meet the personal needs of money for an individual. Since these loans are unsecured, the credit profile of a borrower plays an important role.
                         </p>
                         <a href="#" class="button--white">Know more </a>
                     </div>
@@ -134,31 +290,31 @@
                     <div class="about__data flex">
                         <div class="flex about__card_container ">
                             <div class="about__card bg-orange">
-                                <h3>200+</h3>
-                                <div>Website Build</div>
+                                <h3>500+</h3>
+                                <div>Happy Clients</div>
                                 <br>
-                                <div>Lorem ipsum dolor sit amet consectetur adipiscing elit</div>
+                                <div>Over 500 satisfied clients have trusted us with their financial needs.</div>
                             </div>
                             <div class="about__card">
-                                <h3>34+</h3>
-                                <div>Team Member</div>
+                                <h3>200+</h3>
+                                <div>Loans Approved</div>
                                 <br>
-                                <div>Lorem ipsum dolor sit amet consectetur adipiscing elit</div>
+                                <div>We have successfully approved over 200 loans to help our clients achieve their goals.</div>
                             </div>
                         </div>
 
                         <div class="flex about__card_container">
                             <div class="about__card">
-                                <h3>200+</h3>
-                                <div>Website Build</div>
+                                <h3>100+</h3>
+                                <div>Successful Projects</div>
                                 <br>
-                                <div>Lorem ipsum dolor sit amet consectetur adipiscing elit</div>
+                                <div>Our financial support has contributed to the success of over 100 projects.</div>
                             </div>
                             <div class="about__card">
-                                <h3>34+</h3>
-                                <div>Team Member</div>
+                                <h3>50+</h3>
+                                <div>Experienced Team Members</div>
                                 <br>
-                                <div>Lorem ipsum dolor sit amet consectetur adipiscing elit</div>
+                                <div>Our team of over 50 experts is dedicated to providing the best loan services.</div>
                             </div>
                         </div>
                     </div>
@@ -168,8 +324,7 @@
             <section class="section category">
                 <div class="swiper category-swiper">
                     <h2 class="section__title">What We Do?</h2>
-                    <p>Explore our range of offerings, from web development to digital
-                        marketing. We're here to fuel your digital success.
+                    <p>Explore our Only the best professional Services.
                     </p>
                     <div class="swipper_button_wrpper">
                         <div class="swiper-button-next"><i class="fas fa-chevron-right"></i></div>
@@ -179,49 +334,44 @@
                     <div class="swiper-wrapper">
                             <div class="new__content swiper-slide">
                                 <div class="category__data--content">
-                                    <div class="category__abs"><span class="service_icon epub"><img src="./assets/img/icons/epub.svg" class="category__icon" alt=""></span></div>
-                                    <h4 class="category__title">E Book-1 Publishing</h4>
-                                    <p class="category__description">We provide end-to-end epub
-                                        solutions that enable you to convert your content into a digital format for easy distribution and accessibility...</p>
-                                    <div class="category__buttons"><a href="#" class="text-button button--white">Read More <i class="fa-solid fa-arrow-right"></i></a></div>
+                                    <div class="category__abs"><span class="service_icon epub"><img src="./assets/img/MM_images/instant.svg" class="category__icon" alt=""></span></div>
+                                    <h4 class="category__title">Instant Loan</h4>
+                                    <p class="category__description">Instantly receive your loan directly into your bank account. Enjoy fast, seamless processing with no delays, ensuring you get the funds you need promptly.</p>
+                                    <!-- <div class="category__buttons"><a href="#" class="text-button button--white">Read More <i class="fa-solid fa-arrow-right"></i></a></div> -->
                                 </div>
                             </div>
                             <div class="new__content swiper-slide">
                                 <div class="category__data--content">
                                     <div class="category__abs"><span class="service_icon devlop"><img src="./assets/img/icons/dev.svg" class="category__icon" alt=""></span></div>
-                                    <h4 class="category__title">E Book-1 Publishing</h4>
-                                    <p class="category__description">We provide end-to-end epub
-                                        solutions that enable you to convert your content into a digital format for easy distribution and accessibility...</p>
-                                    <div class="category__buttons"><a href="#" class="text-button button--white">Read More <i class="fa-solid fa-arrow-right"></i></a></div>
+                                    <h4 class="category__title">Quick Approvals</h4>
+                                    <p class="category__description">Apply quickly and securely using your PAN and Aadhaar number. Our straightforward application process safeguards your personal information, making it easy to access funds.</p>
+                                    <!-- <div class="category__buttons"><a href="#" class="text-button button--white">Read More <i class="fa-solid fa-arrow-right"></i></a></div> -->
                                 </div>
                             </div>
         
                             <div class="new__content swiper-slide">
                                 <div class="category__data--content">
                                     <div class="category__abs"><span class="service_icon email"><img src="./assets/img/icons/email.svg" class="category__icon" alt=""></span></div>
-                                    <h4 class="category__title">E Book-1 Publishing</h4>
-                                    <p class="category__description">We provide end-to-end epub
-                                        solutions that enable you to convert your content into a digital format for easy distribution and accessibility...</p>
-                                    <div class="category__buttons"><a href="#" class="text-button button--white">Read More <i class="fa-solid fa-arrow-right"></i></a></div>
+                                    <h4 class="category__title">Affordable EMI Plans</h4>
+                                    <p class="category__description">Choose an EMI amount that fits your convenience. Tailor your repayment plan to suit your financial needs, providing flexibility and control over your monthly payments.</p>
+                                    <!-- <div class="category__buttons"><a href="#" class="text-button button--white">Read More <i class="fa-solid fa-arrow-right"></i></a></div> -->
                                 </div>
                             </div>
                             <div class="new__content swiper-slide">
                                 <div class="category__data--content">
                                     <div class="category__abs"><span class="service_icon DM"><img src="./assets/img/icons/DM.svg" class="category__icon" alt=""></span></div>
-                                    <h4 class="category__title">E Book-1 Publishing</h4>
-                                    <p class="category__description">We provide end-to-end epub
-                                        solutions that enable you to convert your content into a digital format for easy distribution and accessibility...</p>
-                                    <div class="category__buttons"><a href="#" class="text-button button--white">Read More <i class="fa-solid fa-arrow-right"></i></a></div>
+                                    <h4 class="category__title">Easy Documentation</h4>
+                                    <p class="category__description">Benefit from minimal documentation requirements, simplifying the application process. Enjoy a hassle-free experience with fewer requirements, allowing you to focus on achieving your financial goals.</p>
+                                    <!-- <div class="category__buttons"><a href="#" class="text-button button--white">Read More <i class="fa-solid fa-arrow-right"></i></a></div> -->
                                 </div>
                             </div>
         
                             <div class="new__content swiper-slide">
                                 <div class="category__data--content">
                                     <div class="category__abs"><span class="service_icon lms"><img src="./assets/img/icons/lms.svg" class="category__icon" alt=""></span></div>
-                                    <h4 class="category__title">E Book-1 Publishing</h4>
-                                    <p class="category__description">We provide end-to-end epub
-                                        solutions that enable you to convert your content into a digital format for easy distribution and accessibility...</p>
-                                    <div class="category__buttons"><a href="#" class="text-button button--white">Read More <i class="fa-solid fa-arrow-right"></i></a></div>
+                                    <h4 class="category__title">Professional Consultant</h4>
+                                    <p class="category__description">Get personalized financial advice from experts. Benefit from tailored strategies, industry insights, and dedicated support to make informed decisions and achieve your financial goals.</p>
+                                    <!-- <div class="category__buttons"><a href="#" class="text-button button--white">Read More <i class="fa-solid fa-arrow-right"></i></a></div> -->
                                 </div>
                             </div>
                     </div>
@@ -232,57 +382,102 @@
 
             <!--Projects-->
             <section class="projects section">
-                <h2 class="section__title">Our Projects</h2>
-                <p class="projects__sub">Explore our range of offerings, from web development to digital marketing. We're here to fuel your digital success.</p>
+                <h2 class="section__title">How It Works</h2>
+                <p class="projects__sub">Explore our 4 easy steps to get instant loan.</p>
                 <div class="container grid projects__content">
-                        <div><img src="./assets/img/Thumbs/selectart.png" alt=""></div>
+                        <div><img src="./assets/img/MM_images/requirements.svg" alt=""></div>
                     <div>
-                        <h3>Select Art</h3>
-                        <p>Explore our range of offerings, from web development to digital marketing. We're here to fuel your digital success. Explore our range of offerings, from web development to digital marketing. We're here to fuel your digital success.</p>
+                        <h3>Loan Requirements</h3>
+                        <p>Clearly list the criteria or prerequisites for obtaining a loan. Include essential factors like minimum credit score, income requirements, and any other necessary documentation.</p>
 
                         <div>
                             <h5 class="text-bold">
-                                What we offered
+                                Keypoints
                             </h5>
                             <div class="buttons_group">
-                                 <span href="#" class="projects__button projects__button__bg-purple"><i class="fa-solid fa-check"></i><span>Content management</span></span>
-                                 <span href="#" class="projects__button projects__button__bg-brown"><i class="fa-solid fa-check"></i><span>Development</span></span>
-                                 <span href="#" class="projects__button projects__button__bg-blue"><i class="fa-solid fa-check"></i><span>Digital Marketing</span></span>
-                                 <span href="#" class="projects__button projects__button__bg-orange"><i class="fa-solid fa-check"></i><span>Email Marketing</span></span>
-                                 <span href="#" class="projects__button projects__button__bg-lightgreen"><i class="fa-solid fa-check"></i><span>SEO</span></span>
+                                 <span href="#" class="projects__button projects__button__bg-purple"><i class="fa-solid fa-check"></i><span>Credit Score</span></span>
+                                 <span href="#" class="projects__button projects__button__bg-brown"><i class="fa-solid fa-check"></i><span>Income</span></span>
+                                 <span href="#" class="projects__button projects__button__bg-blue"><i class="fa-solid fa-check"></i><span>Documentation</span></span>
+                                 <span href="#" class="projects__button projects__button__bg-orange"><i class="fa-solid fa-check"></i><span>Loan Prerequisites</span></span>
                             </div>
-                            <a href="#" class="text-button button--white projects_know">Know more <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 
                     
                 </div>
-                <div class="container grid projects__content">
-                    <div><img src="./assets/img/Thumbs/selectart.png" alt=""></div>  
-                <div>
-                    <h3>Select Art</h3>
-                    <p>Explore our range of offerings, from web development to digital marketing. We're here to fuel your digital success. Explore our range of offerings, from web development to digital marketing. We're here to fuel your digital success.</p>
 
+
+
+
+                <div class="container grid projects__content">
                     <div>
-                        <h5 class="text-bold">
-                            What we offered
-                        </h5>
-                        <div class="buttons_group">
-                             <span href="#" class="projects__button projects__button__bg-purple"><i class="fa-solid fa-check"></i><span>Content management</span></span>
-                             <span href="#" class="projects__button projects__button__bg-brown"><i class="fa-solid fa-check"></i><span>Development</span></span>
-                             <span href="#" class="projects__button projects__button__bg-blue"><i class="fa-solid fa-check"></i><span>Digital Marketing</span></span>
-                             <span href="#" class="projects__button projects__button__bg-orange"><i class="fa-solid fa-check"></i><span>Email Marketing</span></span>
-                             <span href="#" class="projects__button projects__button__bg-lightgreen"><i class="fa-solid fa-check"></i><span>SEO</span></span>
+                        <h3>Eligibility Criteria</h3>
+                        <p>Detail who qualifies for a loan with your company. Explain the general eligibility requirements and any specific conditions for different types of loans.</p>
+    
+                        <div>
+                            <h5 class="text-bold">
+                                Keypoints
+                            </h5>
+                            <div class="buttons_group">
+                                 <span href="#" class="projects__button projects__button__bg-purple"><i class="fa-solid fa-check"></i><span>Loan Qualification</span></span>
+                                 <span href="#" class="projects__button projects__button__bg-brown"><i class="fa-solid fa-check"></i><span>Eligibility Conditions</span></span>
+                                 <span href="#" class="projects__button projects__button__bg-blue"><i class="fa-solid fa-check"></i><span>Borrower Requirements</span></span>
+                                 <span href="#" class="projects__button projects__button__bg-orange"><i class="fa-solid fa-check"></i><span>Loan Types</span></span>
+                            </div>
                         </div>
-                        <a href="#" class="text-button button--white projects_know">Know more <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
+                    <div><img src="./assets/img/MM_images/eligibility.svg" alt=""></div>
+                </div>
+
+
+                <div class="container grid projects__content">
+                    <div><img src="./assets/img/MM_images/repayment.svg" alt=""></div>
+                    <div>
+                        <h3>Monthly Repayment</h3>
+                        <p>Provide information on how monthly repayments are calculated. Include an explanation of interest rates, repayment schedules, and options for calculating monthly payments.</p>
+    
+                        <div>
+                            <h5 class="text-bold">
+                                Keypoints
+                            </h5>
+                            <div class="buttons_group">
+                                 <span href="#" class="projects__button projects__button__bg-purple"><i class="fa-solid fa-check"></i><span>Repayment Schedule</span></span>
+                                 <span href="#" class="projects__button projects__button__bg-brown"><i class="fa-solid fa-check"></i><span>Interest Rates</span></span>
+                                 <span href="#" class="projects__button projects__button__bg-blue"><i class="fa-solid fa-check"></i><span>Payment Calculator</span></span>
+                                 <span href="#" class="projects__button projects__button__bg-orange"><i class="fa-solid fa-check"></i><span>Loan Installments</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+
+
+                <div class="container grid projects__content">
+                    
+                    <div>
+                        <h3>Select Your Lender</h3>
+                        <p>Offer options or a comparison tool for users to choose from various lenders. Highlight key features, rates, and benefits of each lender.</p>
+    
+                        <div>
+                            <h5 class="text-bold">
+                                Keypoints
+                            </h5>
+                            <div class="buttons_group">
+                                 <span href="#" class="projects__button projects__button__bg-purple"><i class="fa-solid fa-check"></i><span>Lender Options</span></span>
+                                 <span href="#" class="projects__button projects__button__bg-brown"><i class="fa-solid fa-check"></i><span>Loan Providers</span></span>
+                                 <span href="#" class="projects__button projects__button__bg-blue"><i class="fa-solid fa-check"></i><span>Compare Lenders</span></span>
+                                 <span href="#" class="projects__button projects__button__bg-orange"><i class="fa-solid fa-check"></i><span>Best Rates</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div><img src="./assets/img/MM_images/choose.svg" alt=""></div>
+                    
                 </div>
                 
-            
-                
-            </div>
 
-            <div class="container projects__views"><a href="#" class="button button--orange">View All <i class="fa-solid fa-arrow-right rotate320"></i></a></div>
+            <!-- <div class="container projects__views"><a href="#" class="button button--orange">View All <i class="fa-solid fa-arrow-right rotate320"></i></a></div> -->
             </section>
 
 
@@ -348,7 +543,7 @@
                         <h3>
                             Have an idea? Let’s get your project started today!
                         </h3>
-                        <div><a href="#" class="button button--orange">Get in Touch</a></div>
+                        <div><a href="#contactForm" class="button button--orange">Get in Touch</a></div>
                     </div>
                 </div>
             </section>
@@ -433,7 +628,7 @@
                     </span>
                     <p class="contact__mid__text">or</p>
                 </div>
-                <div class="contact__container container grid">
+                <div class="contact__container container grid" id="contactForm">
                     
                     <div class="map-sec" id="map">
                         <h2>Find us</h2>
@@ -563,6 +758,9 @@
             </footer>
 
             <!--=============== SCROLL UP ===============-->
+            <a href="#" class="scrollup-whatsapp" id="scrollup-whatsapp">
+                <i class="fa-brands fa-whatsapp scrollup-whatsapp__icon"></i>
+            </a>
             <a href="#" class="scrollup" id="scroll-up">
                 <i class='bx bx-up-arrow-alt scrollup__icon'></i>
             </a>

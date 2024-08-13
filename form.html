@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="assets/img/new_images/logo.png" type="image/x-icon">
+
+        <!--=============== BOXICONS ===============-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        
+        
+        <!--=============== UIKIT ===============-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.6/dist/css/uikit.min.css" />
+        
+
+        <!--=============== SWIPER CSS ===============--> 
+        <!--<link rel="stylesheet" href="assets/css/swiper-bundle.min.css">-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+        <!--=============== CSS ===============--> 
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <script src="https://kit.fontawesome.com/ae45a68bcd.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <title>Responsive Halloween Website</title>
+    </head>
+    <body>
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">
+                    <img src="assets/img/new_images/logo.png" alt="asdasdasdasda" class="nav__logo-img">
+                    MMBI
+                </a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link">Home</a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">About</a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#trick" class="nav__link" type="button">Personal Loan <i class="fa-solid fa-angle-down"></i></a>
+                                
+                                    <ul class="nav-dropdown">
+                                        <li></li>
+                                        <li></li>
+                                        <li><a href="#">Interest Rate</a></li>
+                                        <li><a href="#">Document Required</a></li>
+                                        <li><a href="#">Eligibilty Criteria</a></li>
+                                    </ul>
+                                
+                        </li>
+                        <li class="nav__item">
+                            <a href="#new" class="nav__link" type="button">EMI Calculator <i class="fa-solid fa-angle-down"></i></a>
+                            
+                                <ul class="nav-dropdown">
+                                    <li></li>
+                                    <li></li>
+                                    <li><a href="#">Home Loan</a></li>
+                                    <li><a href="#">Business Loan</a></li>
+                                    <li><a href="#">Education Loan</a></li>
+                                    
+                                </ul>
+                            
+                        </li>
+                        <li class="nav__list">
+                            <a href="#" class="nav__link" type="button">Contact</a>
+                        </li>
+                        <a href="tel:+919821481799" class="button button--orange">Apply Now</a>
+                    </ul>
+
+                    <div class="nav__close" id="nav-close">
+                        <i class='bx bx-x'></i>
+                    </div>
+
+                    <img src="assets/Img_1/service card/logo_teel.svg" alt="" class="nav__img">
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-grid-alt'></i>
+                </div>
+
+            </nav>
+        </header>
+
+        <main>
+            <div class="section">
+                <div id="loading-spinner" class="uk-position-center" hidden>
+                    <div uk-spinner></div>
+                </div>
+                <div class="uk-container uk-margin-top">
+                    <h2 class="uk-heading-line uk-text-center"><span>Loan Application Form</span></h2>
+                
+                    <form class="uk-form-stacked" id="loan-form" name="mmbi" method="post">
+                
+                        <div class="uk-grid-small uk-child-width-expand@s" uk-grid>
+                            <div>
+                                <label class="uk-form-label" for="first-name">First Name</label>
+                                <div class="uk-form-controls">
+                                    <input class="uk-input" id="first-name" name="First_Name" type="text" placeholder="Enter your first name" required>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="uk-form-label" for="last-name">Last Name</label>
+                                <div class="uk-form-controls">
+                                    <input class="uk-input" id="last-name" name="Last_Name" type="text" placeholder="Enter your last name" required>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="uk-grid-small uk-child-width-expand@s" uk-grid>
+                            <div>
+                                <label class="uk-form-label" for="phone-number">Phone Number</label>
+                                <div class="uk-form-controls">
+                                    <input class="uk-input" id="phone-number" name="Phone_Number" type="tel" placeholder="Enter your phone number" required>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="uk-form-label" for="dob">Date of Birth (DD.MM.YYYY)</label>
+                                <div class="uk-form-controls">
+                                    <input class="uk-input" id="dob" type="text" name="Date_of_Birth" placeholder="DD.MM.YYYY" required>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="email">Email</label>
+                            <div class="uk-form-controls">
+                                <input class="uk-input" id="email" type="email" name="Email" placeholder="Enter your email" required>
+                            </div>
+                        </div>
+                
+                        <div class="uk-grid-small uk-child-width-expand@s" uk-grid>
+                            <div>
+                                <label class="uk-form-label" for="loan-amount">Loan Amount</label>
+                                <div class="uk-form-controls">
+                                    <input class="uk-input" id="loan-amount" name="Loan_Amount" type="number" placeholder="Enter the loan amount" required>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="uk-form-label" for="interest-rate">Expected Interest Rate (%)</label>
+                                <div class="uk-form-controls">
+                                    <input class="uk-input" id="interest-rate" name="Expected_Interest_Rate" type="number" step="0.01" placeholder="Enter the expected interest rate" required>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="pan-number">PAN Number</label>
+                            <div class="uk-form-controls">
+                                <input class="uk-input" id="pan-number" name="PAN_Number" type="text" placeholder="Enter your PAN number" pattern="[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}" title="PAN number should be in the format: ABCDE1234F" required>
+                            </div>
+                        </div>
+                
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="aadhar-number">Aadhar Number</label>
+                            <div class="uk-form-controls">
+                                <input class="uk-input" id="aadhar-number" name="Aadhar_Number" type="text" placeholder="Enter your Aadhar number" pattern="\d{12}" title="Aadhar number should be 12 digits" required>
+                            </div>
+                        </div>
+                
+                        <div class="uk-margin">
+                            <button class="button button--orange" id="form_button" type="submit">Submit</button>
+                        </div>
+                    </form>
+                    <div id="success-modal" class="uk-flex-top" uk-modal>
+                        <div class="uk-modal-dialog uk-margin-auto-vertical">
+                          <button class="uk-modal-close-default" type="button" uk-close></button>
+                          <div class="uk-modal-body">
+                            <h2 class="uk-modal-title">Success</h2>
+                            <p>Your form has been submitted successfully!</p>
+                          </div>
+                          <div class="uk-modal-footer uk-text-right">
+                            <button class="button uk-modal-close button--orange" type="button">Okay!</button>
+                        </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Error Modal -->
+                      <div id="error-modal" class="uk-flex-top" uk-modal>
+                        <div class="uk-modal-dialog uk-margin-auto-vertical">
+                          <button class="uk-modal-close-default" type="button" uk-close></button>
+                          <div class="uk-modal-body">
+                            <h2 class="uk-modal-title">Error</h2>
+                            <p>There was an error submitting the form. Please try again.</p>
+                          </div>
+                          <div class="uk-modal-footer uk-text-right">
+                            <button class="button uk-modal-close button--orange" type="button">Okay!</button>
+                        </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            
+            
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script>
+            document.getElementById('pan-number').addEventListener('input', function(e) {
+                e.target.value = e.target.value.toUpperCase();
+            });
+        
+            document.getElementById('loan-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const fields = e.target.elements;
+    let valid = true;
+    const formData = {};
+    const submitButton = document.getElementById('form_button');
+
+    for (let field of fields) {
+        if (field.type !== 'submit' && field.type !== 'button') {
+            if (!field.checkValidity()) {
+                field.classList.add('uk-form-danger');
+                valid = false;
+
+            } else {
+                field.classList.remove('uk-form-danger');
+                field.classList.add('uk-form-success');
+            }
+            formData[field.name] = field.value; // Use field.name instead of field.id
+        }
+    }
+
+    if(valid){
+        submitButton.setAttribute("disabled", true);
+        submitButton.textContent = "Submitting...";
+    }
+});
+
+        
+            flatpickr("#dob", {
+                dateFormat: "d.m.Y",
+                allowInput: true
+            });
+        </script>
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycby4cje5F6BG6PTjES69j5-AkP2kfTfPbNVcM2Rvd9lCgWV4s-HjFPDLxNRyMigNMaeazQ/exec';
+            const form = document.forms['mmbi'];
+            const submitButton = document.getElementById('form_button');
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault();
+              
+              const form = e.target;
+              
+              const formData = new FormData(form);
+              const loadingSpinner = document.getElementById('loading-spinner');
+
+              loadingSpinner.removeAttribute('hidden');
+              fetch(scriptURL, {
+                method: 'POST',
+                body: formData
+              })
+              .then(response => response.json())
+              .then(data => {
+                loadingSpinner.setAttribute('hidden', '');
+                if (data.result === 'success') {
+                    UIkit.modal('#success-modal').show();
+                    submitButton.removeAttribute("disabled");
+                    submitButton.textContent = "Submit";
+                    
+                  form.reset();
+                } else {
+                  throw new Error("Error submitting form.");
+                }
+              })
+              .catch(error => {
+                loadingSpinner.setAttribute('hidden', '');
+                console.error('Error!', error.message);
+                UIkit.modal('#error-modal').show();
+                submitButton.removeAttribute("disabled");
+                submitButton.textContent = "Submit";
+              });
+            });
+          </script>
+
+
+
+
+
+
+
+
+
+        <script src="assets/js/scrollreveal.min.js"></script>
+
+        <!--=============== SWIPER JS ===============-->
+        <!--<script src="assets/js/swiper-bundle.min.js"></script>-->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        
+        
+        <!--=============== MAIN JS ===============-->
+        <script src="assets/js/main.js"></script>
+
+        <!--=============== UIKIT JS ===============-->
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.6/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.6/dist/js/uikit-icons.min.js"></script>
+    </body>
+</html>

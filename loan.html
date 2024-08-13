@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/new_images/logo.png" type="image/x-icon">
+
+    <!--=============== BOXICONS ===============-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    
+    
+    <!--=============== UIKIT ===============-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.6/dist/css/uikit.min.css" />
+
+    <!--=============== SWIPER CSS ===============--> 
+    <!--<link rel="stylesheet" href="assets/css/swiper-bundle.min.css">-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!--=============== CSS ===============--> 
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://kit.fontawesome.com/ae45a68bcd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Loan Calculator</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-doughnutlabel"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+</head>
+<body>
+    <style>
+        #legendContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        #legendContainer ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0;
+        }
+        #legendContainer li {
+            margin: 5px 10px;
+            align-items: center;
+        }
+        #legendContainer li span {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+    </style>
+    <style>
+        /* Customize the track */
+        .uk-range::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 8px;
+            cursor: pointer;
+            background: #fff;
+            border-radius: 5px;
+        }
+        .uk-range::-moz-range-track {
+            width: 100%;
+            height: 8px;
+            cursor: pointer;
+            background: #fff;
+            border-radius: 5px;
+        }
+        .uk-range::-ms-track {
+            width: 100%;
+            height: 8px;
+            cursor: pointer;
+            background: #fff;
+            border-radius: 5px;
+        }
+
+        /* Customize the thumb/handle */
+        .uk-range::-webkit-slider-thumb {
+            
+            border: 2px solid #fff;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #EF932A;
+            cursor: pointer;
+            -webkit-appearance: none;
+            margin-top: -6px;
+        }
+        .uk-range::-moz-range-thumb {
+            
+            border: 2px solid #fff;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #EF932A;
+            cursor: pointer;
+        }
+        .uk-range::-ms-thumb {
+            
+            border: 2px solid #fff;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #EF932A;
+            cursor: pointer;
+        }
+
+        /* Customize the active part of the track (for webkit) */
+        .uk-range::-webkit-slider-runnable-track {
+            background: linear-gradient(to right, #fff var(--range-value, 0%), #EF932A var(--range-value, 0%));
+        }
+
+        .range-values {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+    
+    
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                <img src="assets/Img_1/service card/logo_red.svg" alt="asdasdasdasda" class="nav__logo-img">
+                MMBI
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">Home</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">About</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#trick" class="nav__link" type="button">Personal Loan <i class="fa-solid fa-angle-down"></i></a>
+                            
+                                <ul class="nav-dropdown">
+                                    <li></li>
+                                    <li></li>
+                                    <li><a href="#">Interest Rate</a></li>
+                                    <li><a href="#">Document Required</a></li>
+                                    <li><a href="#">Eligibilty Criteria</a></li>
+                                </ul>
+                            
+                    </li>
+                    <li class="nav__item">
+                        <a href="#new" class="nav__link" type="button">EMI Calculator <i class="fa-solid fa-angle-down"></i></a>
+                        
+                            <ul class="nav-dropdown">
+                                <li></li>
+                                <li></li>
+                                <li><a href="#">Home Loan</a></li>
+                                <li><a href="#">Business Loan</a></li>
+                                <li><a href="#">Education Loan</a></li>
+                                
+                            </ul>
+                        
+                    </li>
+                    <a href="tel:+919821481799" class="button button--orange">Apply Now</a>
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class='bx bx-x'></i>
+                </div>
+
+                <img src="assets/Img_1/service card/logo_teel.svg" alt="" class="nav__img">
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-grid-alt'></i>
+            </div>
+
+        </nav>
+    </header>
+    <main class="main">
+        <div class="section grid loan">
+            <h1 class="loan__title">Loan Calculator</h1>
+        <p class="loan__description">The Calculated amount is approximate. The exact terms of the loan are determined individually.</p>
+        <br>
+        
+
+        <div class="section flex loandata">
+            <div class="loan__form" id="form1">
+                <div class="loan__form--wrapper">
+                    <form class="uk-form-stacked" id="loan-form">
+                        <div class="uk-margin">
+                            <select class="uk-select" id="form-selector" onchange="toggleForms()">
+                                <option value="">Select Loan Type</option>
+                                <option value="business">Business Loan</option>
+                                <option value="education">Education Loan</option>
+                                <option value="home">Home Loan</option>
+                                <option value="personal">Personal Loan</option>
+                            </select>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" id="loan-label" for="principal">Loan Amount</label>
+                            <div class="uk-form-controls">
+                                <input onchange="calculateLoan()" class="uk-input" id="principal" type="number" placeholder="Please Enter Amount" value="100000" disabled>
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="interest">Interest Rate (% P.A)</label>
+                            <div class="uk-form-controls">
+                                <input onchange="calculateLoan()" class="uk-input" id="interest" type="number" placeholder="e.g. 9%" value="9.5" min="8.5" max="20" step="0.1" required oninput="syncRangeInput(this.value)" disabled>
+                                <div id="error-message" style="color: red; display: none;"></div>
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <div class="range-container" style="position: relative; width: 100%;">
+                                <input onchange="calculateLoan()" id="rangeInput" class="uk-range" type="range" value="8.5" min="9.5" max="20" step="0.5" aria-label="Range" oninput="syncNumberInput(this.value)" disabled>
+                                <div class="range-values">
+                                    <span id="minValue">9.5</span>
+                                    <span id="maxValue">20</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="years">Tenure (Years)</label>
+                            <div class="uk-form-controls">
+                                <select class="uk-select" id="years" onchange="calculateLoan()" disabled>
+                                    
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button class="button button--orange" type="button" onclick="calculateLoan()">Calculate</button>
+                    </form>
+                </div>
+                
+            </div>
+            <div class="loan__chart">
+                <!--<h4>Total EMI: <span class="emiamount">5555</span></h4>-->
+                <canvas id="loanChart">
+                </canvas>
+            </div>
+            <div id="legendContainer"></div>   
+        </div>    
+        
+        
+        </div>
+    </main>
+    
+    <script>
+        
+    </script>
+    <script src="assets/js/scrollreveal.min.js"></script>
+
+    <!--=============== SWIPER JS ===============-->
+    <!--<script src="assets/js/swiper-bundle.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/loan.js"></script>
+
+    <!--=============== UIKIT JS ===============-->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.6/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.6/dist/js/uikit-icons.min.js"></script>
+</body>
+</html>
